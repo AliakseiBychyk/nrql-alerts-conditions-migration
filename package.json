@@ -1,0 +1,21 @@
+{
+  "name": "nrql-alerts-conditions-migration",
+  "version": "1.0.0",
+  "description": "plugin for copy NRQL alerts conditions from non-prod policy",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aliaksei Bychyk",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4"
+  }
+}
