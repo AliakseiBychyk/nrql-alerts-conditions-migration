@@ -12,14 +12,19 @@ export const getNonProdConditions = async () => {
 
   const url = `${BASE_URL}alerts_nrql_conditions.json?policy_id=${POLICY_ID_NONPROD}`;
 
-  const { data } = await axios({
-    method: 'GET',
-    url,
-    headers: {
-      'X-Api-Key': API_KEY,
-      'Content-Type': 'application/json'
-    }
-  });
+  try {
+    const { data } = await axios({
+      method: 'GET',
+      url,
+      headers: {
+        'X-Api-Key': API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+  } catch (e) {
+    console.error('Get method failed with status', e.statusCode);
+    throw e;
+  }
 
   const filePath = path.join(__dirname, 'conditions', 'conditions.json');
 
